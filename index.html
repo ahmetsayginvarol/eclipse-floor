@@ -44,7 +44,7 @@
   --avail: rgba(15,35,70,0.72);
   --avail-border: rgba(80,140,220,0.9);
   --teal: #2dd4bf;
-  --marker-size: 26px;
+  --marker-size: 30px;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -470,9 +470,9 @@ body {
 #name-box .nb-ship { font-size:9px; color:var(--text-dim); letter-spacing:2px; text-transform:uppercase; margin-bottom:6px; }
 #name-box h2 { font-family:'Cinzel',serif; font-size:20px; color:var(--gold); letter-spacing:3px; margin-bottom:4px; }
 #name-box .nb-sub { font-size:10px; color:var(--text-dim); margin-bottom:22px; line-height:1.6; }
-#user-badge { font-size:9px; color:var(--gold); display:flex; align-items:center; gap:5px; cursor:pointer; flex-shrink:0; }
-#user-badge:hover { color:var(--gold2); }
-#user-badge .ub-dot { width:6px; height:6px; border-radius:50%; background:var(--gold); }
+#user-badge { font-size:9px; color:var(--gold); display:flex; align-items:center; gap:5px; cursor:pointer; flex-shrink:0; white-space:nowrap; padding:2px 7px; border-radius:10px; border:1px solid rgba(201,168,76,0.3); transition:all 0.15s; }
+#user-badge:hover { background:var(--gold-dim); border-color:var(--gold); }
+#user-badge .ub-dot { width:6px; height:6px; border-radius:50%; background:var(--gold); flex-shrink:0; }
 #broadcast-overlay {
   position: fixed; inset: 0;
   background: rgba(0,0,0,0.82);
@@ -508,12 +508,14 @@ body {
   border: 1px solid var(--border2);
 }
 #broadcast-box .bc-ok {
-  padding: 11px 32px; background: var(--gold); color: #1a0a00;
+  padding: 11px 22px; background: var(--gold); color: #1a0a00;
   border: none; border-radius: 6px; font-family: 'DM Mono', monospace;
   font-size: 13px; font-weight: 700; cursor: pointer;
   touch-action: manipulation; min-height: 44px;
+  flex: 1; max-width: 160px;
 }
 #broadcast-box .bc-ok:active { background: #d4b050; }
+#broadcast-box #bc-reply-btn:active { background: var(--gold-dim) !important; }
 
 /* ─── RESET TOAST ─── */
 #toast-container {
@@ -537,10 +539,4 @@ body {
 @keyframes toast-out { to   { opacity:0; transform:translateX(20px); } }
 .toast-tbl { color: var(--gold); font-weight: 600; }
 
-/* ─── SPLIT A-D badge ─── */
-.split-count-badge {
-  position: absolute; top: -5px; left: -5px;
-  width: 10px; height: 10px; border-radius: 50%;
-  background: var(--gold); border: 1px solid var(--bg);
-  font-size: 6px; font-weight: 700; color: #1a0a00;
-  display: flex; align-items: center; justi
+/* ─── COVER COUNT O
